@@ -1,0 +1,37 @@
+#product-image {
+    max-height: 300px; 
+    width: auto; 
+  }
+
+  .jumbotron {
+    background-image: url(''); 
+    background-size: cover;  
+    background-position: center;  
+}
+
+input[type="text"], input[type="number"], .form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.btn {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.navbar {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
