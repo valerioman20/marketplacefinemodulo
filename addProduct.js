@@ -1,16 +1,19 @@
+// Richiesta API
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
 let id;
-
+// Funzione che si avvia al caricamento della pagina web
 window.onload = async () => {
+  // Recupero il parametro 'id'
   const param = new URLSearchParams(window.location.search);
   id = param.get("id");
   if (id) {
-    await loadProductData();
+    await loadProductData();  // Se esiste un id, carica i dati del prodotto per modificarlo
   } else {
-    setupNewProductForm();
+    setupNewProductForm(); // Se non esiste passo alla creazione di un nuovo prodotto
   }
 };
 
+// Funzione per recuperare i dati del prodotto basati sull'id 
 const loadProductData = async () => {
   try {
     const res = await fetch(apiUrl + id, {
@@ -25,9 +28,7 @@ const loadProductData = async () => {
   }
 };
 
-const setupNewProductForm = () => {
-  // Serve ad impostare il form per aggiungere un nuovo prodotto
-};
+
 
 const populateFormFields = (product) => {
   //Qui invece popolo i campi del form con i dati del prodotto
@@ -41,6 +42,7 @@ const handleApiResponse = (res, successMessage) => {
   }
 };
 
+// Crea o aggiorno un prodotto se l'id è presente o meno
 const createOrUpdateProduct = async (method) => {
   const product = {
     name: document.querySelector("#name").value,
@@ -65,6 +67,7 @@ const createOrUpdateProduct = async (method) => {
   }
 };
 
+// Per eleiminare un prodotto
 const deleteProduct = async () => {
   try {
     const res = await fetch(apiUrl + id, {
@@ -80,7 +83,7 @@ const deleteProduct = async () => {
 };
 
 
-// Qui descritti i vari usi dei metodi
+// Event listener per i bottoni di aggiunta, modifica ed eliminazione
 document.getElementById("addProductBtn").addEventListener("click", () => {
   createOrUpdateProduct("POST");
 });
