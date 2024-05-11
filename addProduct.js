@@ -42,7 +42,7 @@ const handleApiResponse = (res, successMessage) => {
   }
 };
 
-// Crea o aggiorno un prodotto se l'id è presente o meno
+// Crea o modifico un prodotto se l'id è presente o meno
 const createOrUpdateProduct = async (method) => {
   const product = {
     name: document.querySelector("#name").value,
@@ -67,7 +67,7 @@ const createOrUpdateProduct = async (method) => {
   }
 };
 
-// Per eleiminare un prodotto
+// Per eliminare un prodotto
 const deleteProduct = async () => {
   try {
     const res = await fetch(apiUrl + id, {
@@ -97,7 +97,7 @@ document.getElementById("deleteProductBtn").addEventListener("click", deleteProd
 
 
 /* Tramite questa funzione quando clicchiamo sul tasto Vedi dettagli, nel back office troveremo le informazioni compilate
-cosi facendo per l'utene sarà piu facile modificare i dettagli di un rodotto*/
+cosi facendo per l'utene sarà piu facile modificare i dettagli di un prodotto*/
 document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadProductDetails(productId) {
